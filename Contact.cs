@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DraftAgenda
+﻿namespace DraftAgenda
 {
-    internal class Contact
+    internal class Contact //: IComparable<Contact>
     {
         public string Name { get; set; }
+        public string LastName { get; set; }    
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
 
@@ -20,7 +15,15 @@ namespace DraftAgenda
             }
             Name = name;
         }
-        public Contact(string name, string phoneNumber) : this(name)
+        public Contact(string name, string lastName) : this(name)  
+        {
+            if (string.IsNullOrWhiteSpace(lastName))
+            {
+                throw new ArgumentException("El apellido no puede estar vacío.");
+            }
+            LastName = lastName;
+        }
+        public Contact(string name, string lastName,string phoneNumber) : this(name, lastName)
         {
             if (!long.TryParse(phoneNumber, out _))
             {
@@ -28,7 +31,7 @@ namespace DraftAgenda
             }
             PhoneNumber = phoneNumber;
         }
-        public Contact(string name, string phoneNumber, string email) : this(name, phoneNumber)
+        public Contact(string name, string lastName,string phoneNumber, string email) : this(name, lastName, phoneNumber)
         {
             if (string.IsNullOrWhiteSpace(email) || !email.Contains('@'))
             {
