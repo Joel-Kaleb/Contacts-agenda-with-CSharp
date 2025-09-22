@@ -1,0 +1,10 @@
+# Build Files
+bin/
+obj/
+
+# IDE user and configuration files
+.vs/
+
+# Several
+*.log
+*.bak

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36429.23 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DraftAgenda", "DraftAgenda.csproj", "{CA43A1E9-D3B6-4A24-B55C-8427EACAB88A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA43A1E9-D3B6-4A24-B55C-8427EACAB88A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA43A1E9-D3B6-4A24-B55C-8427EACAB88A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA43A1E9-D3B6-4A24-B55C-8427EACAB88A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA43A1E9-D3B6-4A24-B55C-8427EACAB88A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EAB802B9-989D-4561-A5E7-35E3D47F49F9}
+	EndGlobalSection
+EndGlobal
