@@ -1,6 +1,6 @@
 ﻿namespace DraftAgenda
 {
-    internal class Contact //: IComparable<Contact>
+    internal class Contact : IComparable<Contact>
     {
         public string Name { get; set; }
         public string LastName { get; set; }    
@@ -51,6 +51,16 @@
             if (word.Length == 1) { return word.ToUpper(); }
             
             return char.ToUpper(word[0]) + word.Substring(1).ToLower();
+        }
+
+        public int CompareTo(Contact other)
+        {
+            int result = string.Compare(this.Name, other.Name, StringComparison.OrdinalIgnoreCase);
+            
+            if (result == 0)
+                return string.Compare(this.LastName, other.LastName, StringComparison.OrdinalIgnoreCase);
+
+            return result;
         }
     }
 }
