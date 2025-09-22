@@ -13,7 +13,8 @@
             {
                 throw new ArgumentException("El nombre no puede estar vacío.");
             }
-            Name = name;
+            string formatName = CapitalizedFirstLetter(name);
+            Name = formatName;
         }
         public Contact(string name, string lastName) : this(name)  
         {
@@ -21,7 +22,8 @@
             {
                 throw new ArgumentException("El apellido no puede estar vacío.");
             }
-            LastName = lastName;
+            string formatLastName = CapitalizedFirstLetter(lastName);
+            LastName = formatLastName;
         }
         public Contact(string name, string lastName,string phoneNumber) : this(name, lastName)
         {
@@ -38,6 +40,17 @@
                 throw new ArgumentException("El correo electrónico no es válido.");
             }
             Email = email;
+        }
+
+        public static string CapitalizedFirstLetter(string word)
+        {
+            if (string.IsNullOrWhiteSpace(word))
+            {
+                return word;
+            }
+            if (word.Length == 1) { return word.ToUpper(); }
+            
+            return char.ToUpper(word[0]) + word.Substring(1).ToLower();
         }
     }
 }
