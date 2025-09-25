@@ -41,5 +41,16 @@ namespace DraftAgenda
             this.Contacts.Add(other);
             SortContactsByName();
         }
+
+        public string RemoveLastContact()
+        {
+            if (this.Contacts.Count == 0)
+            {
+                return string.Empty;
+            }
+            string lastContact = this.Contacts[Contacts.Count - 1].Name;
+            this.Contacts.RemoveAt(Contacts.Count - 1);
+            return lastContact;
+        }
     }
 }
