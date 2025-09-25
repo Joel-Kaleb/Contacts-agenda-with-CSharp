@@ -9,5 +9,10 @@ namespace DraftAgenda
     internal class ContactList
     {
         private List<Contact> Contacts { get; set; }
+
+        public ContactList() 
+        { 
+            this.Contacts = new List<Contact>(); 
+        }
     }
 }
