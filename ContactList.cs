@@ -30,5 +30,10 @@ namespace DraftAgenda
                 Console.WriteLine(this.Contacts[i].ToString());
             }
         }
+
+        private void SortContactsByName()
+        {
+            this.Contacts.Sort();
+        }
     }
 }
