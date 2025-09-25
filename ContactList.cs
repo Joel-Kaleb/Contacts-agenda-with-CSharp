@@ -15,7 +15,7 @@ namespace DraftAgenda
             this.Contacts = new List<Contact>(); 
         }
 
-        public void AscendingOrder()
+        public void DisplayContacts()
         {
             foreach (var contact in this.Contacts)
             {
@@ -23,7 +23,7 @@ namespace DraftAgenda
             }
         }
 
-        public void DescendingOrder()
+        public void PrintInReverseOrder()
         {
             for (int i = this.Contacts.Count - 1; i >= 0; i--)
             {
@@ -34,6 +34,12 @@ namespace DraftAgenda
         private void SortContactsByName()
         {
             this.Contacts.Sort();
+        }
+
+        public void AddContact(Contact other)
+        {
+            this.Contacts.Add(other);
+            SortContactsByName();
         }
     }
 }
