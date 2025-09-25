@@ -62,5 +62,11 @@
 
             return result;
         }
+
+        public override string ToString()
+        {
+            return $"Nombre: {this.Name}\nApellido(s): {this.LastName}\n Teléfono: {this.PhoneNumber}" +
+                $"\nEmail: {this.Email}";
+        }
     }
 }
