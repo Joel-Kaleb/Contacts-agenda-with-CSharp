@@ -22,5 +22,13 @@ namespace DraftAgenda
                 Console.WriteLine(contact.ToString());
             }
         }
+
+        public void DescendingOrder()
+        {
+            for (int i = this.Contacts.Count - 1; i >= 0; i--)
+            {
+                Console.WriteLine(this.Contacts[i].ToString());
+            }
+        }
     }
 }
