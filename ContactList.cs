@@ -14,5 +14,13 @@ namespace DraftAgenda
         { 
             this.Contacts = new List<Contact>(); 
         }
+
+        public void AscendingOrder()
+        {
+            foreach (var contact in this.Contacts)
+            {
+                Console.WriteLine(contact.ToString());
+            }
+        }
     }
 }
