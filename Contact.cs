@@ -68,5 +68,21 @@
             return $"Nombre: {this.Name}\nApellido(s): {this.LastName}\n Teléfono: {this.PhoneNumber}" +
                 $"\nEmail: {this.Email}";
         }
+
+        public override bool Equals(object other)
+        {
+            if (other == null)
+                return false;
+            Contact contact = other as Contact;
+            if (contact == null)
+                return false;
+
+            return (this.Name == contact.Name) && (this.LastName == contact.LastName);
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(this.Name, this.LastName);
+        }
     }
 }
