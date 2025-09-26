@@ -18,7 +18,7 @@
             }
             foreach (var contact in this.Contacts)
             {
-                Console.WriteLine(contact.ToString());
+                Console.WriteLine(contact.ToString() + "\n");
             }
         }
 
@@ -31,7 +31,7 @@
             }
             for (int i = this.Contacts.Count - 1; i >= 0; i--)
             {
-                Console.WriteLine(this.Contacts[i].ToString());
+                Console.WriteLine(this.Contacts[i].ToString() + "\n");
             }
         }
 

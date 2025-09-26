@@ -19,6 +19,9 @@
                         case 1:
                             ViewContacts(agenda);
                             break;
+                        case 2:
+                            AddContact(agenda);
+                            break;
                         case 5:
                             Console.WriteLine("Saliendo del programa...");
                             break;
@@ -61,6 +64,7 @@
 
             if (int.TryParse(input, out inputNumber) && (inputNumber >= 1 && inputNumber <= 3))
             {
+                Console.Clear();
                 if (inputNumber == 1)
                 {
                     agenda.DisplayContacts();
@@ -83,6 +87,49 @@
                     "precione enter para continuar");
                 Console.ReadLine();
                 return;
+            }
+        }
+
+        static void AddContact(ContactList agenda)
+        {
+            string name, lastName, phone, email;
+
+            while (true)
+            {
+                try
+                {
+                    Console.Clear();
+                    Console.WriteLine("--- AGREGAR CONTACTO ---");
+
+                    Console.Write("Ingresa el nombre del contacto: ");
+                    name = Console.ReadLine();
+
+                    Console.Write("Ingresa el apellido del contacto: ");
+                    lastName = Console.ReadLine();
+
+                    Console.Write("Ingresa el teléfono del contacto: ");
+                    phone = Console.ReadLine();
+
+                    Console.Write("Ingresa el Email del contacto: ");
+                    email = Console.ReadLine();
+
+                    Contact newContact = new Contact(name, lastName, phone, email);
+
+                    agenda.AddContact(newContact);
+
+                    Console.WriteLine("\n¡Contacto agregado exitosamente! Presiona Enter.");
+                    Console.ReadLine();
+
+                    break;
+                }
+                catch (ArgumentException ex)
+                {
+                    Console.Clear();
+                    Console.WriteLine("--- ERROR DE VALIDACIÓN ---");
+                    Console.WriteLine(ex.Message); 
+                    Console.WriteLine("\nPresiona Enter para intentar de nuevo...");
+                    Console.ReadLine();
+                }
             }
         }
     }
