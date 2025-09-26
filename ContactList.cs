@@ -42,6 +42,11 @@
 
         public void AddContact(Contact other)
         {
+            if (this.Contacts.Contains(other))
+            {
+                throw new ArgumentException($"El contacto {other.Name} {other.LastName} " +
+                    $"ya existe en la agenda.");
+            }
             this.Contacts.Add(other);
             SortContactsByName();
         }
