@@ -25,6 +25,9 @@
                         case 3:
                             DeleteLastContact(agenda);
                             break;
+                        case 4:
+                            FindContact(agenda);
+                            break;
                         case 5:
                             Console.WriteLine("Saliendo del programa...");
                             break;
@@ -150,6 +153,29 @@
             }
             Console.WriteLine("\nPrecione enter para continuar...");
             Console.ReadLine();
+        }
+
+        static void FindContact(ContactList agenda)
+        {
+            Console.Clear();
+            Console.Write("Ingresa el nombre del contacto a buscar: ");
+            string contactName = Console.ReadLine();
+
+            while (string.IsNullOrEmpty(contactName))
+            {
+                Console.WriteLine("El nombre no puede estár vacío");
+                contactName = Console.ReadLine();
+            }
+
+            bool exist = agenda.FindContactByName(contactName);
+            if (exist) 
+            {
+                Console.WriteLine($"El contacto {contactName} existe");
+            }
+            else
+            {
+                Console.WriteLine($"El contacto {contactName} no existe");
+            }
         }
     }
 }
