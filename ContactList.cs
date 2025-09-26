@@ -2,21 +2,21 @@
 {
     internal class ContactList
     {
-        private List<Contact> Contacts { get; set; }
+        private List<Contact> _contacts { get; set; }
 
         public ContactList() 
         { 
-            this.Contacts = new List<Contact>(); 
+            this._contacts = new List<Contact>(); 
         }
 
         public void DisplayContacts()
         {
-            if (this.Contacts.Count == 0) 
+            if (this._contacts.Count == 0) 
             {
                 Console.WriteLine("No hay contactos registrados");
                 return; 
             }
-            foreach (var contact in this.Contacts)
+            foreach (var contact in this._contacts)
             {
                 Console.WriteLine(contact.ToString() + "\n");
             }
@@ -24,48 +24,48 @@
 
         public void PrintInReverseOrder()
         {
-            if (this.Contacts.Count == 0)
+            if (this._contacts.Count == 0)
             {
                 Console.WriteLine("No hay contactos registrados");
                 return;
             }
-            for (int i = this.Contacts.Count - 1; i >= 0; i--)
+            for (int i = this._contacts.Count - 1; i >= 0; i--)
             {
-                Console.WriteLine(this.Contacts[i].ToString() + "\n");
+                Console.WriteLine(this._contacts[i].ToString() + "\n");
             }
         }
 
         private void SortContactsByName()
         {
-            this.Contacts.Sort();
+            this._contacts.Sort();
         }
 
         public void AddContact(Contact other)
         {
-            if (this.Contacts.Contains(other))
+            if (this._contacts.Contains(other))
             {
                 throw new ArgumentException($"El contacto {other.Name} {other.LastName} " +
                     $"ya existe en la agenda.");
             }
-            this.Contacts.Add(other);
+            this._contacts.Add(other);
             SortContactsByName();
         }
 
         public string RemoveLastContact()
         {
-            if (this.Contacts.Count == 0)
+            if (this._contacts.Count == 0)
             {
                 return string.Empty;
             }
-            string lastContact = this.Contacts[Contacts.Count - 1].Name;
-            this.Contacts.RemoveAt(Contacts.Count - 1);
+            string lastContact = this._contacts[_contacts.Count - 1].Name;
+            this._contacts.RemoveAt(_contacts.Count - 1);
             return lastContact;
         }
 
         public bool FindContactByName(string name)
         {
             name = Contact.CapitalizedFirstLetter(name);
-            foreach (var contact in this.Contacts)
+            foreach (var contact in this._contacts)
             {
                 if (contact.Name == name)
                 {

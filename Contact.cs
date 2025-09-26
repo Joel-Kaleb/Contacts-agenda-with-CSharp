@@ -25,7 +25,7 @@
             string formatLastName = CapitalizedFirstLetter(lastName);
             LastName = formatLastName;
         }
-        public Contact(string name, string lastName,string phoneNumber) : this(name, lastName)
+        public Contact(string name, string lastName, string phoneNumber) : this(name, lastName)
         {
             if (!long.TryParse(phoneNumber, out _))
             {
