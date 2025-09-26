@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DraftAgenda
+﻿namespace DraftAgenda
 {
     internal class ContactList
     {
@@ -55,6 +49,7 @@ namespace DraftAgenda
 
         public bool FindContactByName(string name)
         {
+            name = Contact.CapitalizedFirstLetter(name);
             foreach (var contact in this.Contacts)
             {
                 if (contact.Name == name)
