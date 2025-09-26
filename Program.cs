@@ -22,6 +22,9 @@
                         case 2:
                             AddContact(agenda);
                             break;
+                        case 3:
+                            DeleteLastContact(agenda);
+                            break;
                         case 5:
                             Console.WriteLine("Saliendo del programa...");
                             break;
@@ -131,6 +134,22 @@
                     Console.ReadLine();
                 }
             }
+        }
+
+        static void DeleteLastContact(ContactList agenda)
+        {
+            Console.Clear();
+            string lastContactName = agenda.RemoveLastContact();
+            if (string.IsNullOrEmpty(lastContactName))
+            {
+                Console.WriteLine("No hay contactos registrados");
+            }
+            else
+            {
+                Console.WriteLine($"El contacto {lastContactName} fue borrado existosamente");
+            }
+            Console.WriteLine("\nPrecione enter para continuar...");
+            Console.ReadLine();
         }
     }
 }
