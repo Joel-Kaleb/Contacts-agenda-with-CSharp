@@ -52,5 +52,17 @@ namespace DraftAgenda
             this.Contacts.RemoveAt(Contacts.Count - 1);
             return lastContact;
         }
+
+        public bool FindContactByName(string name)
+        {
+            foreach (var contact in this.Contacts)
+            {
+                if (contact.Name == name)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
