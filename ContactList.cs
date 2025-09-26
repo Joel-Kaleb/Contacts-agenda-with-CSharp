@@ -11,6 +11,11 @@
 
         public void DisplayContacts()
         {
+            if (this.Contacts.Count == 0) 
+            {
+                Console.WriteLine("No hay contactos registrados");
+                return; 
+            }
             foreach (var contact in this.Contacts)
             {
                 Console.WriteLine(contact.ToString());
@@ -19,6 +24,11 @@
 
         public void PrintInReverseOrder()
         {
+            if (this.Contacts.Count == 0)
+            {
+                Console.WriteLine("No hay contactos registrados");
+                return;
+            }
             for (int i = this.Contacts.Count - 1; i >= 0; i--)
             {
                 Console.WriteLine(this.Contacts[i].ToString());
